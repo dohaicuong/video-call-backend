@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "api/app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node api/app",
+    "dev": "ts-node-dev api/app",
+    "gen": "yarn prisma:deploy && yarn prisma:gen && yarn types:gen",
+    "prisma:deploy": "yarn prisma migrate up --experimental",
+    "prisma:gen": "yarn prisma generate",
+    "types:gen": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.0.0-beta.5",
+    "apollo-server": "^2.13.1",
+    "graphql-subscriptions": "^1.1.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.13.5",
+    "@graphql-codegen/typescript": "1.13.5",
+    "@graphql-codegen/typescript-resolvers": "1.13.5",
+    "@prisma/cli": "^2.0.0-beta.5",
+    "@types/node": "^14.0.0",
+    "ts-node": "^8.10.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.2"
+  }
+}
