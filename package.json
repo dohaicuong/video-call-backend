@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node api/app",
     "dev": "ts-node-dev api/app",
-    "gen": "yarn prisma:deploy && yarn prisma:gen && yarn types:gen",
+    "gen": "yarn prisma:gen && yarn types:gen",
     "prisma:deploy": "yarn prisma migrate up --experimental",
     "prisma:gen": "yarn prisma generate",
     "types:gen": "graphql-codegen --config codegen.yml"
